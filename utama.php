@@ -36,7 +36,7 @@ if(!isset($_SESSION['username'])) {
   </head>
 
   <body>
-
+    <form id="form-container" class="form-container">
     <div class="navbar navbar-inverse navbar-fixed-top" role="navigation">
       <div class="container-fluid">
         <div class="navbar-header">
@@ -56,7 +56,9 @@ if(!isset($_SESSION['username'])) {
             <li><a href="#">Help</a></li>
           </ul>
           <form class="navbar-form navbar-right">
-            <input type="text" class="form-control" placeholder="Search...">
+            <label for="input">Wikipedia : </label>
+            <input type="text" id="input" value="">
+            <button id="submit-btn">Submit</button>
           </form>
         </div>
       </div>
@@ -71,6 +73,10 @@ if(!isset($_SESSION['username'])) {
           </ul>
           <ul class="nav nav-sidebar">
           <li><a href="logoutuser.php"><b>Logout</b></a></li>
+          <li class="wikipedia-container">
+        <h3 id="wikipedia-header">Relevant Wikipedia Links</h3>
+        <ul id="wikipedia-links">Type in an address above and find relevant Wikipedia articles here!</ul>
+      </li>
         </ul>
         </div>
         <div class="col-sm-9 col-sm-offset-3 col-md-10 col-md-offset-2 main">
@@ -139,11 +145,13 @@ if(!isset($_SESSION['username'])) {
                   <span class="glyphicon glyphicon-chevron-right"></span>
                 </a>
               </div>
+            </form>
 
     <!-- Bootstrap core JavaScript
     ================================================== -->
     <!-- Placed at the end of the document so the pages load faster -->
     <script src="jquery.min.js"></script>
+    <script src="script.js"></script>
     <script src="js/bootstrap.min.js"></script>
     <script src="js/docs.min.js"></script>
   </body>
